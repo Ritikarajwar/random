@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="any" id="anynum">
+    <button class="add">
+        add 
+    </button>
+    <button class="print">
+        print 
+    </button>
+    <p class="para"></p>
+    <script>
+        let arr = []
+        let numbers=document.querySelector('input')
+        let add=document.querySelector('.add')
+        let show=document.querySelector('.print')
+        let para =document.querySelector('.para')
+    
+        
+        
+        let array=[]
+        
+        add.onclick=()=>{
+            
+            array.push(numbers.value)
+            console.log(array)
+            numbers.value = ''
+        }
+             function randomfunction() { 
+                for (let i = 0; i < array.length; i++) {
+                let random = Math.floor(Math.random() * array.length)
+                if (!arr.includes(array[random])) {
+                    arr.push(array[random])
+                }
+                
+                
+                 
+            }
+            if(arr.length!=array.length){
+                randomfunction()
+            }
+            
+             }
+            
+
+        show.onclick=()=>{
+
+            randomfunction()
+             console.log(arr)
+             
+            let i=0
+            
+    
+              let interval =  setInterval(()=>{
+                    para.innerHTML +=arr[i] 
+                
+                    i++
+                if(i===array.length){
+                    clearInterval(interval)
+                }
+               },1000)
+               
+                
+            
+              }
+
+
+    </script>
+</body>
+</html>
